@@ -51,7 +51,7 @@ def stocks_us(payload: dict):
     """
     payload例:
       {
-        "codes": ["DJUSBK", "^GSPC"],
+        "codes": ["^BKX", "^GSPC"],
         "start": "2000-01-01",   // 省略時は直近5日
         "end":   "2025-05-20"    // 省略時は今日
       }
