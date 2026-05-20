@@ -59,7 +59,7 @@ def stocks_us(payload: dict):
     レスポンス例（期間指定あり）:
       {
         "data": {
-          "DJUSBK": [
+          "^BKX": [
             {"date": "2000-01-03", "close": 123.45},
             ...
           ],
@@ -70,7 +70,7 @@ def stocks_us(payload: dict):
     レスポンス例（期間指定なし → 直近2日分）:
       {
         "data": {
-          "DJUSBK": {"today_close": 123.45, "prev_close": 122.10},
+          "^BKX": {"today_close": 123.45, "prev_close": 122.10},
           "^GSPC":  {"today_close": 5123.4, "prev_close": 5100.0}
         }
       }
@@ -78,7 +78,7 @@ def stocks_us(payload: dict):
     import yfinance as yf
     import math
 
-    codes  = payload.get("codes", ["DJUSBK", "^GSPC"])
+    codes  = payload.get("codes", ["^BKX", "^GSPC"])
     start  = payload.get("start")
     end    = payload.get("end")
     result = {}
